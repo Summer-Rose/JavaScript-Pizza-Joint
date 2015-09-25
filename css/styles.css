@@ -1,59 +1,21 @@
-body {
-	background-image: url('../img/background-green.jpg');
-}
+/********************
+	MULTISTEP FORM
+*********************/
 
-.titleArea {
-	position: absolute;
-	z-index: 10;
-}
 
-.titleArea h1 {
-	font-family: 'Merienda', san-serif;
-	margin: 20px;
-	font-size: 4em;
-	color: white;
-
-}
-
-.slices {
-	position: absolute;
-	z-index: 5;
-}
-
-.slices img {
-	margin-top: 40px;
-	width: 60%;
-}
-
-#menu {
-	background-image: url('../img/background-stripes.jpg');
-	height: 900px;
-}
-
-#size {
-	margin-bottom: 10px;
-}
-
-/*custom font*/
 @import url(http://fonts.googleapis.com/css?family=Montserrat);
 
-/*basic reset*/
+
 * {margin: 0; padding: 0;}
 
-html {
+/*html {
 	height: 100%;
-	/*Image only BG fallback*/
-	background: url('http://thecodeplayer.com/uploads/media/gs.png');
-	/*background = gradient + image pattern combo*/
-	background: 
-		linear-gradient(rgba(196, 102, 0, 0.2), rgba(155, 89, 182, 0.2)), 
-		url('http://thecodeplayer.com/uploads/media/gs.png');
-}
+}*/
 
 body {
 	font-family: montserrat, arial, verdana;
 }
-/*form styles*/
+
 #msform {
 	width: 400px;
 	margin: 50px auto;
@@ -66,19 +28,19 @@ body {
 	border-radius: 3px;
 	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
 	padding: 20px 30px;
-	
+
 	box-sizing: border-box;
 	width: 80%;
 	margin: 0 10%;
-	
-	/*stacking fieldsets above each other*/
+
+
 	position: absolute;
 }
-/*Hide all except first fieldset*/
+
 #msform fieldset:not(:first-of-type) {
 	display: none;
 }
-/*inputs*/
+
 #msform input, #msform textarea {
 	padding: 15px;
 	border: 1px solid #ccc;
@@ -90,7 +52,7 @@ body {
 	color: #2C3E50;
 	font-size: 13px;
 }
-/*buttons*/
+
 #msform .action-button {
 	width: 100px;
 	background: #27AE60;
@@ -105,7 +67,7 @@ body {
 #msform .action-button:hover, #msform .action-button:focus {
 	box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
 }
-/*headings*/
+
 .fs-title {
 	font-size: 15px;
 	text-transform: uppercase;
@@ -118,11 +80,11 @@ body {
 	color: #666;
 	margin-bottom: 20px;
 }
-/*progressbar*/
+
 #progressbar {
 	margin-bottom: 30px;
 	overflow: hidden;
-	/*CSS counters to number the steps*/
+
 	counter-reset: step;
 }
 #progressbar li {
@@ -146,7 +108,7 @@ body {
 	border-radius: 3px;
 	margin: 0 auto 5px auto;
 }
-/*progressbar connectors*/
+
 #progressbar li:after {
 	content: '';
 	width: 100%;
@@ -155,15 +117,68 @@ body {
 	position: absolute;
 	left: -50%;
 	top: 9px;
-	z-index: -1; /*put it behind the numbers*/
+	z-index: -1;
 }
 #progressbar li:first-child:after {
-	/*connector not needed before the first step*/
-	content: none; 
+	content: none;
 }
-/*marking active/completed steps green*/
-/*The number of the step and the connector before it = green*/
 #progressbar li.active:before,  #progressbar li.active:after{
 	background: #27AE60;
+	color: white;
+}
+
+
+body {
+	background: url('../img/background-realPizza.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.inner {
+	position: absolute;
+}
+.headArea img {
+	width: 50%;
+}
+
+#restaurant {
+	margin-left: 40px;
+	font-size: 8em;
+	color: #27AE60;
+}
+
+.firstLetter {
+	font-size: 2em;
+	color: #27AE60;
+	font-family: "Great Vibes", cursive;
+	font-weight: normal;
+	text-shadow: 0 1px 1px #fff;
+}
+
+#msform {
+	margin-top: 180px;
+	z-index: 100;
+}
+
+#size {
+	margin-bottom: 10px;
+}
+
+.menu {
+	margin: 75px;
+	background: rgba(0,0,0,0.5);
+	height: 900px;
+	text-align: center;
+	padding-top: 50px;
+}
+
+.menu h1 {
+	color: #ccc;
+}
+
+.underline {
+	text-decoration: underline;
 	color: white;
 }
