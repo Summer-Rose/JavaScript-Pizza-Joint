@@ -2,15 +2,16 @@ function Pizza(size) {
 	this.size = size;
 	this.toppings = [];
 	this.price = 0;
-}
+};
 
 Pizza.prototype.addTopping = function(topping) {
 	this.toppings.push(topping);
-} 
+}; 
 
 Pizza.prototype.getPrice = function() {
-	var meats = ["pepperoni", "sausage", "bacon"];
-	var veggies = ["black olives", "artichoke hearts", "bell peppers"];
+	var meats = ["pepperoni", "sausage", "bacon", "ham", "chicken", "anchovies"];
+	var veggies = ["black olives", "artichoke hearts", "bell peppers", "pineapple", "sun dried tomatoes", 
+	"tomatoes", "garlic", "spinach"];
 	var total = 0;
 	if (this.size == "Large") {
 		total += 20;
