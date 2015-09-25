@@ -1,12 +1,12 @@
-# Project Name
+# Summerzini's Pizzeria
 
-##### _Project Purpose, date 2015_
+##### _Epicodus Week 7 - JavaScript Week 2 Code Review, 24 September 2015_
 
-#### By **Names**
+#### By **Summer Brochtrup**
 
 ## Description
 
-Description goes here
+This web app allows users to order pizzas and calculate total price of order. Users can select from pre-selected pizza types or build thier own.
 
 ## Setup
 
@@ -20,10 +20,13 @@ Description goes here
 * jQuery
 * Mocha
 * Chai
+* HTML
+* CSS
+* Bootstrap
 
 ### Legal
 
-Copyright (c) 2015 **NAMES**
+Copyright (c) 2015 **Summer Brochtrup**
 
 This software is licensed under the MIT license.
 
