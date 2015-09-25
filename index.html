@@ -17,43 +17,104 @@
   </div>
 
 	  <div class="row">
-	  	<div class="col-sm-3 col-md-3 col-lg-3"></div>
-	  	<div id="menu" class="col-sm-9 col-md-9 col-lg-9">
-	  		<!-- multistep form -->
+	  	<div class="col-sm-2 col-md-2 col-lg-2"></div>
+	  	<div id="menu" class="col-sm-10 col-md-10 col-lg-10">
+
+	  		<!-- multistep pizza order form -->
 			<form id="msform">
 			  <!-- progressbar -->
 			  <ul id="progressbar">
-			    <li class="active">Account Setup</li>
-			    <li>Social Profiles</li>
-			    <li>Personal Details</li>
+			    <li class="active">Select A Size</li>
+			    <li>Pick Your Toppings</li>
+			    <li>Review Your Order</li>
 			  </ul>
 		  <!-- fieldsets -->
 		  <fieldset>
-		    <h2 class="fs-title">Create your account</h2>
+		    <h2 class="fs-title">Start Your Order</h2>
 		    <h3 class="fs-subtitle">This is step 1</h3>
-		    <input type="text" name="email" placeholder="Email" />
-		    <input type="password" name="pass" placeholder="Password" />
-		    <input type="password" name="cpass" placeholder="Confirm Password" />
+		    <input type="text" name="name" placeholder="Your Name" />
+		    <select name="type" class="form-control" id="type">
+				<option value="The Big Cheese">The Big Cheese</option>
+				<option value="Nice to Meat You">Nice To Meat You</option>
+				<option value="My Big Fat Greek Pizza">My Big Fat Greek Pizza</option>
+				<option value="Build Your Own">Build Your Own</option>
+			</select>
+			<select name="size" class="form-control" id="size">
+				<option value="large">Large</option>
+				<option value="medium">Large</option>
+				<option value="small">Small</option>
+			</select>
+			<input type="number" name="quantity" placeholder="How  many?" />
 		    <input type="button" name="next" class="next action-button" value="Next" />
 		  </fieldset>
+		  <!---If Build Your Own-->
 		  <fieldset>
-		    <h2 class="fs-title">Social Profiles</h2>
-		    <h3 class="fs-subtitle">Your presence on the social network</h3>
-		    <input type="text" name="twitter" placeholder="Twitter" />
-		    <input type="text" name="facebook" placeholder="Facebook" />
-		    <input type="text" name="gplus" placeholder="Google Plus" />
+		    <h2 class="fs-title">Add Some Toppings</h2>
+		    <h3 class="fs-subtitle">Build Your Own Pizza Masterpiece</h3>
+		 	<div class="form-group">
+  				<label for="meats">Meats:</label>
+  				<select multiple class="form-control" id="meats">
+				    <option value="pepperoni">Pepperoni</option>
+				    <option value="sausage">Sausage</option>
+				    <option value="bacon">Bacon</option>
+				    <option value="ham">Ham</option>
+				    <option value="chicken">Chicken</option>
+				    <option value="anchovies">Anchovies</option>
+				 </select>
+			</div>
+
+			<div class="form-group">
+  				<label for="meats">Veggies:</label>
+  				<select multiple class="form-control" id="meats">
+				    <option value="black olives">Black Olives</option>
+				    <option value="artichoke hearts">Artichoke Hearts</option>
+				    <option value="bell peppers">Bell Peppers</option>
+				    <option value="pineapple">Pineapple</option>
+				    <option value="sun dried tomatoes">Sun Dried Tomatoes</option>
+				    <option value="anchovies">Anchovies</option>
+				    <option value="garlic">Garlic</option>
+				 </select>
+			</div>
 		    <input type="button" name="previous" class="previous action-button" value="Previous" />
 		    <input type="button" name="next" class="next action-button" value="Next" />
 		  </fieldset>
-		  <fieldset>
-		    <h2 class="fs-title">Personal Details</h2>
-		    <h3 class="fs-subtitle">We will never sell it</h3>
-		    <input type="text" name="fname" placeholder="First Name" />
-		    <input type="text" name="lname" placeholder="Last Name" />
-		    <input type="text" name="phone" placeholder="Phone" />
-		    <textarea name="address" placeholder="Address"></textarea>
+		  <!--If Pre-Selected-->
+		  <!-- <fieldset>
+		    <h2 class="fs-title">Any Additional Toppings?</h2>
+		    <h3 class="fs-subtitle">Customize Your Order</h3>
+		 	<div class="form-group">
+  				<label for="meats">Meats:</label>
+  				<select multiple class="form-control" id="meats">
+				    <option value="pepperoni">Pepperoni</option>
+				    <option value="sausage">Sausage</option>
+				    <option value="bacon">Bacon</option>
+				    <option value="ham">Ham</option>
+				    <option value="chicken">Chicken</option>
+				    <option value="anchovies">Anchovies</option>
+				 </select>
+			</div>
+
+			<div class="form-group">
+  				<label for="meats">Veggies:</label>
+  				<select multiple class="form-control" id="meats">
+				    <option value="black olives">Black Olives</option>
+				    <option value="artichoke hearts">Artichoke Hearts</option>
+				    <option value="bell peppers">Bell Peppers</option>
+				    <option value="pineapple">Pineapple</option>
+				    <option value="sun dried tomatoes">Sun Dried Tomatoes</option>
+				    <option value="anchovies">Anchovies</option>
+				    <option value="garlic">Garlic</option>
+				 </select>
+			</div>
 		    <input type="button" name="previous" class="previous action-button" value="Previous" />
-		    <input type="submit" name="submit" class="submit action-button" value="Submit" />
+		    <input type="submit" name="submit" class="submit action-button" value="Submit" /> -->
+		  <!-- </fieldset> -->
+		  <fieldset>
+		    <h2 class="fs-title">Review Your Order</h2>
+		    <h3 class="fs-subtitle">Enjoy Your Pie, <span id="customerName"></span>!</h3>
+		    <p>You ordered</p>
+		   
+		    <input type="button" name="next" class="next action-button" value="Next" />
 		  </fieldset>
 		</form>
 
