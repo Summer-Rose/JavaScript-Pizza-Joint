@@ -76,3 +76,28 @@ $(".previous").click(function(){
 $(".submit").click(function(){
 	return false;
 })
+
+
+$(document).ready(function() {
+	var size;
+	var quanity;
+	var meats;
+	var veggies;
+	
+	$( "#size" ).change(function() {
+		size = $( "#size" ).val();
+		console.log(size);
+	});
+	$( "#quantity" ).change(function() {
+		quantity = $( "#quantity" ).val();
+		console.log(quantity);
+	});
+	$( "#meats" ).change(function() {
+		meats = $( "#meats" ).val();
+		console.log(meats);
+	});
+	$( "#veggies" ).change(function() {
+		veggies = $( "#veggies" ).val();
+		console.log(veggies);
+	});
+})
