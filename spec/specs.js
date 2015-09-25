@@ -10,4 +10,23 @@ describe('Pizza', function() {
   	newPizza.addTopping("Sun Dried Tomatoes");
     expect(newPizza.toppings).to.eql(["Mushrooms", "Sun Dried Tomatoes"]);
   });
+
+  it("Returns correct price based on size of pizza", function() {
+  	var newPizza = new Pizza("Large");
+    expect(newPizza.getPrice()).to.equal(20);
+  });
+
+  it("Returns correct price based on size of pizza and meat toppings", function() {
+  	var newPizza = new Pizza("Large");
+  	newPizza.addTopping("bacon");
+    expect(newPizza.getPrice()).to.equal(20.75);
+  });
+
+   it("Returns correct price based on size of pizza and multiple toppings", function() {
+  	var newPizza = new Pizza("Small");
+  	newPizza.addTopping("bacon");
+  	newPizza.addTopping("black olives");
+  	newPizza.addTopping("artichoke hearts");
+    expect(newPizza.getPrice()).to.equal(11.75);
+  });
 });
