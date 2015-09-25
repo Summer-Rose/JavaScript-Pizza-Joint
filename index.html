@@ -32,19 +32,20 @@
 		  <fieldset>
 		    <h2 class="fs-title">Start Your Order</h2>
 		    <h3 class="fs-subtitle">This is step 1</h3>
-		    <input type="text" name="name" placeholder="Your Name" />
-		    <select name="type" class="form-control" id="type">
-				<option value="The Big Cheese">The Big Cheese</option>
-				<option value="Nice to Meat You">Nice To Meat You</option>
-				<option value="My Big Fat Greek Pizza">My Big Fat Greek Pizza</option>
-				<option value="Build Your Own">Build Your Own</option>
-			</select>
 			<select name="size" class="form-control" id="size">
+				<option value="" disabled selected>Choose A Size</option>
 				<option value="large">Large</option>
-				<option value="medium">Large</option>
+				<option value="medium">Medium</option>
 				<option value="small">Small</option>
 			</select>
-			<input type="number" name="quantity" placeholder="How  many?" />
+			<select name="quantity" class="form-control" id="quantity">
+				<option value="" disabled selected>How many pizzas?</option>
+				<option value="1">- 1 -</option>
+				<option value="2">- 2 -</option>
+				<option value="3">- 3 -</option>
+				<option value="4">- 4 -</option>
+				<option value="5">- 5 -</option>
+			</select>
 		    <input type="button" name="next" class="next action-button" value="Next" />
 		  </fieldset>
 		  <!---If Build Your Own-->
