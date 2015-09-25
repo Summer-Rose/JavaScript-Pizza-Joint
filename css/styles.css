@@ -1,5 +1,5 @@
 body {
-	background-image: url('../img/background-pattern.jpg');
+	background-image: url('../img/background-green.jpg');
 }
 
 .titleArea {
@@ -11,7 +11,7 @@ body {
 	font-family: 'Merienda', san-serif;
 	margin: 20px;
 	font-size: 4em;
-	color: orange;
+	color: white;
 
 }
 
@@ -26,11 +26,13 @@ body {
 }
 
 #menu {
-	background-image: url('../img/background-green.jpg');
+	background-image: url('../img/background-stripes.jpg');
 	height: 900px;
-
 }
 
+#type {
+	margin-bottom: 10px;
+}
 
 /*custom font*/
 @import url(http://fonts.googleapis.com/css?family=Montserrat);
