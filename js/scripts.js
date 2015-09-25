@@ -1,4 +1,43 @@
-//jQuery time
+function Pizza(size) {
+	this.size = size;
+	this.toppings = [];
+	this.price = 0;
+};
+
+Pizza.prototype.addTopping = function(topping) {
+	this.toppings.push(topping);
+};
+
+Pizza.prototype.getPrice = function() {
+	var meats = ["pepperoni", "sausage", "bacon", "ham", "chicken", "anchovies"];
+	var veggies = ["black olives", "artichoke hearts", "bell peppers", "pineapple", "sun dried tomatoes",
+	"tomatoes", "garlic", "spinach"];
+	var total = 0;
+	if (this.size == "Large") {
+		total += 20;
+	} else if (this.size == "Medium") {
+		total += 15;
+	} else {
+		total += 10;
+	}
+
+	for (var i = 0; i < this.toppings.length; i++) {
+		for (var j = 0; j < meats.length; j++) {
+			if (this.toppings[i] == meats[j]) {
+				total += .75;
+			}
+		}
+		for (var j = 0; j < veggies.length; j++) {
+			if (this.toppings[i] == veggies[j]) {
+				total += .50;
+			}
+		}
+	}
+	return total;
+}
+
+///////MULTISTEP FORM JQUERY///////////
+
 var current_fs, next_fs, previous_fs; //fieldsets
 var left, opacity, scale; //fieldset properties which we will animate
 var animating; //flag to prevent quick multi-click glitches
@@ -6,15 +45,15 @@ var animating; //flag to prevent quick multi-click glitches
 $(".next").click(function(){
 	if(animating) return false;
 	animating = true;
-	
+
 	current_fs = $(this).parent();
 	next_fs = $(this).parent().next();
-	
+
 	//activate next step on progressbar using the index of next_fs
 	$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-	
+
 	//show the next fieldset
-	next_fs.show(); 
+	next_fs.show();
 	//hide the current fieldset with style
 	current_fs.animate({opacity: 0}, {
 		step: function(now, mx) {
@@ -27,12 +66,12 @@ $(".next").click(function(){
 			opacity = 1 - now;
 			current_fs.css({'transform': 'scale('+scale+')'});
 			next_fs.css({'left': left, 'opacity': opacity});
-		}, 
-		duration: 800, 
+		},
+		duration: 800,
 		complete: function(){
 			current_fs.hide();
 			animating = false;
-		}, 
+		},
 		//this comes from the custom easing plugin
 		easing: 'easeInOutBack'
 	});
@@ -41,15 +80,15 @@ $(".next").click(function(){
 $(".previous").click(function(){
 	if(animating) return false;
 	animating = true;
-	
+
 	current_fs = $(this).parent();
 	previous_fs = $(this).parent().prev();
-	
+
 	//de-activate current step on progressbar
 	$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
-	
+
 	//show the previous fieldset
-	previous_fs.show(); 
+	previous_fs.show();
 	//hide the current fieldset with style
 	current_fs.animate({opacity: 0}, {
 		step: function(now, mx) {
@@ -62,12 +101,12 @@ $(".previous").click(function(){
 			opacity = 1 - now;
 			current_fs.css({'left': left});
 			previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
-		}, 
-		duration: 800, 
+		},
+		duration: 800,
 		complete: function(){
 			current_fs.hide();
 			animating = false;
-		}, 
+		},
 		//this comes from the custom easing plugin
 		easing: 'easeInOutBack'
 	});
@@ -75,29 +114,40 @@ $(".previous").click(function(){
 
 $(".submit").click(function(){
 	return false;
-})
+});
 
+
+//////// JQUERY FORM INPUT ////////
 
 $(document).ready(function() {
-	var size;
-	var quanity;
-	var meats;
-	var veggies;
-	
-	$( "#size" ).change(function() {
-		size = $( "#size" ).val();
-		console.log(size);
-	});
-	$( "#quantity" ).change(function() {
-		quantity = $( "#quantity" ).val();
+	$("#msform").submit(function(event) {
+		event.preventDefault();
+		var size = $("#size").val();
+		$('#sizeInput').text(size);
+		var quantity = parseInt($("#quantity").val());
 		console.log(quantity);
+		$('#quantityInput').text(quantity);
+		var meats = $("#meats").val();
+		veggies = $("#veggies").val();
+		var toppings;
+		if (meats == null && veggies == null) {
+			toppings = [];
+		} else if (meats == null){
+			toppings = veggies;
+		} else if (veggies == null) {
+			toppings = meats;
+		} else {
+			toppings = meats.concat(veggies);
+		}
+
+		var pizza = new Pizza(size);
+		for (var i = 0; i < toppings.length; i++) {
+			pizza.addTopping(toppings[i]);
+			$('#toppingsInput').append(toppings[i] + " &diams; ");
+		}
+		var price = pizza.getPrice();
+		var total = price*quantity;
+		console.log(total);
+		$('#total').text(total);
 	});
-	$( "#meats" ).change(function() {
-		meats = $( "#meats" ).val();
-		console.log(meats);
-	});
-	$( "#veggies" ).change(function() {
-		veggies = $( "#veggies" ).val();
-		console.log(veggies);
-	});
-})
+});
