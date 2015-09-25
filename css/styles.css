@@ -1,10 +1,7 @@
 /********************
 	MULTISTEP FORM
 *********************/
-
-
 @import url(http://fonts.googleapis.com/css?family=Montserrat);
-
 
 * {margin: 0; padding: 0;}
 
@@ -127,6 +124,9 @@ body {
 	color: white;
 }
 
+/************************
+		CUSTOM STYLES
+************************/
 
 body {
 	background: url('../img/background-realPizza.jpg') no-repeat center center fixed;
@@ -143,18 +143,17 @@ body {
 	width: 50%;
 }
 
-#restaurant {
+.restaurant {
 	margin-left: 40px;
 	font-size: 8em;
 	color: #27AE60;
+	text-shadow: 0 1px 1px #fff;
 }
 
 .firstLetter {
 	font-size: 2em;
-	color: #27AE60;
 	font-family: "Great Vibes", cursive;
 	font-weight: normal;
-	text-shadow: 0 1px 1px #fff;
 }
 
 #msform {
