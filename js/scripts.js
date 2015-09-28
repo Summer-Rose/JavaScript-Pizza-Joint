@@ -10,8 +10,9 @@ Pizza.prototype.addTopping = function(topping) {
 
 Pizza.prototype.getPrice = function() {
 	var meats = ["pepperoni", "sausage", "bacon", "ham", "chicken", "anchovies"];
-	var veggies = ["black olives", "artichoke hearts", "bell peppers", "pineapple", "sun dried tomatoes",
-	"tomatoes", "garlic", "spinach"];
+	var veggies = ["black olives", "kalamata olives", "mushrooms", "spinach", "artichoke hearts", "bell peppers", "pineapple", "sun dried tomatoes",
+	"tomatoes", "garlic"];
+
 	var total = 0;
 	if (this.size == "Large") {
 		total += 20;
@@ -149,5 +150,13 @@ $(document).ready(function() {
 		var total = price*quantity;
 		console.log(total);
 		$('#total').text(total);
+
+		$("#confirmOrder").click(function(event) {
+			event.preventDefault();
+			var name = $("#name").val();
+			$("#review").hide();
+			$("#confirm").show();
+			$('#customerName').text(name);
+		})
 	});
 });
