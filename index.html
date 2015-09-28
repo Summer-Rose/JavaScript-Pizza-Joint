@@ -8,15 +8,11 @@
   </head>
   <body>
     <div class="headArea">
-      <!-- <div class="inner"><img src="img/bubbles.png"></div> -->
+      <div class="inner"><img src="img/bubbles.png"></div>
       <div class="inner">
         <h1 class="restaurant"><span class="firstLetter">S</span>ummerzini's</h1>
-        <h1 class="restaurant"><span class="firstLetter">P</span>izzaria</h1>
       </div>
     </div>
-
-
-
   	<div class="row">
       <div class="col-sm-5 col-md-5 col-lg-5">
           <!-- multistep form -->
@@ -54,7 +50,7 @@
             <div class="form-group">
                <label for="meats">Meats:</label>
                <select multiple class="form-control" id="meats">
-                 <option value="pepperoni">Pepperoni</option>
+                 <option value="pepperoni" id="1">Pepperoni</option>
                  <option value="sausage">Sausage</option>
                  <option value="bacon">Bacon</option>
                  <option value="ham">Ham</option>
@@ -65,37 +61,63 @@
            <div class="form-group">
                <label for="veggies">Veggies:</label>
                <select multiple class="form-control" id="veggies">
-                 <option value="black olives">Black Olives</option>
+                 <option value="black olives" id="2">Black Olives</option>
+                 <option value="kalamata olives">Kalamata Olives</option>
+                 <option value="mushrooms">Mushrooms</option>
+                 <option value="spinach">Spinach</option>
+                 <option value="onions">Onions</option>
                  <option value="artichoke hearts">Artichoke Hearts</option>
                  <option value="bell peppers">Bell Peppers</option>
                  <option value="pineapple">Pineapple</option>
                  <option value="sun dried tomatoes">Sun Dried Tomatoes</option>
-                 <option value="anchovies">Anchovies</option>
+                 <option value="tomatoes">Anchovies</option>
                  <option value="garlic">Garlic</option>
               </select>
            </div>
            <input type="button" name="previous" class="previous action-button" value="Previous" />
            <input type="submit" name="next" class="next action-button" value="Next" />
           </fieldset>
-          <fieldset>
+          <fieldset id="review">
             <h2 class="fs-title">Review Your Order</h2>
             <h3 class="fs-subtitle">Click submit to process order</h3>
             <p><span id="quantityInput"></span> <span id="sizeInput"></span> Pizzas</p>
             <p>WITH</p>
             <p>&diams; <span id="toppingsInput"></span> </p>
             <h3 class="fs-subtitle">Total: $<span class="fs-subtitle" id="total"></span></h3>
-            <input type="text" name="lname" placeholder="Name" />
+            <input type="text" name="name" id="name" placeholder="Name" />
             <input type="text" name="phone" placeholder="Phone" />
             <textarea name="address" placeholder="Delivery Address"></textarea>
             <input type="button" name="previous" class="previous action-button" value="Previous" />
-            <input type="submit" name="submit" class="submit action-button" value="Submit" />
+            <input id="confirmOrder" type="submit" name="submit" class="submit action-button" value="Submit" />
+          </fieldset>
+          <fieldset id="confirm">
+            <h2 class="fs-title">Thank you for your order, <span id="customerName"></span></h2>
+            <input id="confirmOrder" type="submit" name="submit" class="submit action-button" value="Submit" />
           </fieldset>
         </form>
       </div>
       <div id="right" class="col-sm-7 col-md-7 col-lg-7">
         <div class="menu">
           <h1>{  <span class="underline">MENU</span>  }</h1>
-        </div>
+          <table>
+            <tr>
+              <td class="pizzaName">The Summerzini Special</td>
+              <td class="description">&diams; Pesto sauce &diams; kalamata olives &diams; sundried tomatoes &diams; garlic &diams; artichoke hearts &diams; feta cheese</td>
+            </tr>
+            <tr>
+              <td class="pizzaName">Mighty Meat</td>
+              <td class="description">Pepporoni &diams; bacon &diams; sausage &diams; ham</td>
+            </tr>
+            <tr>
+              <td class="pizzaName">Pineapple Express</td>
+              <td class="description">Pesto &diams; pineapple &diams; bell pepper &diams; pepperoni &diams; sausage</td>
+            </tr>
+             <tr>
+              <td class="pizzaName">Sicilian</td>
+              <td class="description">Pepperoni &diams; mushroom &diams; onion &diams; chopped garlic &diams; olive oil</td>
+            </tr>
+          </table>
+        </div> 
       </div>
     </div>
 
