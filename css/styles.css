@@ -129,7 +129,11 @@ body {
 ************************/
 
 body {
-	background: url('../img/background-realPizza.jpg') no-repeat center center fixed;
+	background: linear-gradient(
+	  to right,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.2)
+    ), url('../img/background-realPizza.jpg') no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -139,15 +143,20 @@ body {
 .inner {
 	position: absolute;
 }
+
+.inner img {
+	margin-top: 110px;
+}
 .headArea img {
 	width: 50%;
 }
 
 .restaurant {
 	margin-left: 40px;
-	font-size: 8em;
+	font-size: 5em;
 	color: #27AE60;
 	text-shadow: 0 1px 1px #fff;
+	position: relative;
 }
 
 .firstLetter {
@@ -166,18 +175,43 @@ body {
 }
 
 .menu {
-	margin: 75px;
+	margin: 30px 75px 75px 75px;
 	background: rgba(0,0,0,0.5);
-	height: 900px;
 	text-align: center;
 	padding-top: 50px;
+	border-radius: 5px;
 }
 
 .menu h1 {
 	color: #ccc;
+	margin-bottom: 10px
 }
 
 .underline {
 	text-decoration: underline;
 	color: white;
+}
+
+table {
+	color: white;
+	font-size: 1.25em;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+td {
+    padding-bottom: 1.75em
+}
+
+.pizzaName {
+	text-align: center;
+	width: 40%;
+	padding-left: 15px;
+	font-family: "Great Vibes", cursive;
+	font-size: 2em;
+	
+}
+
+.description {
+	padding-right: 10px;
 }
